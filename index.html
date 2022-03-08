@@ -14,7 +14,6 @@
 <video id="cat" width="480" height="360" autoplay playsinline style="background:black" controls>
 </center>
 <p>This website plays a randomly selected cat video everytime you refresh!</p>
-<p style=" position: absolute; bottom: 0; left: 0; width: 100%; text-align: center;">Made with <3 by <a href="https://jaajko.xyz">jaajko</a></p>
 <script>
 var vidElement = document.getElementById('cat');
 var vidSources = [
@@ -34,5 +33,17 @@ vidElement.addEventListener('ended', function(e) {
   vidElement.play();
 });
 </script>
+<style>
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+</style>
+<div class="footer">
+  <p>Made with <3 by <a href="https://jaajko.xyz">jaajko</a></p>
+</div>
 </body>
 </html>
