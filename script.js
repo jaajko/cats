@@ -1,0 +1,18 @@
+var vidElement = document.getElementById('myvideo');
+var vidSources = [
+  "https://assets.jaajko.xyz/cats/cat.mp4", 
+  "https://assets.jaajko.xyz/cats/cat2.mp4"
+  ];
+var activeVideo = Math.floor((Math.random() * vidSources.length));
+vidElement.src = vidSources[activeVideo];
+vidElement.addEventListener('ended', function(e) {
+  // update the active video index
+  activeVideo = (++activeVideo) % vidSources.length;
+  if(activeVideo === vidSources.length){
+    activeVideo = 0;
+  }
+
+  // update the video source and play
+  vidElement.src = vidSources[activeVideo];
+  vidElement.play();
+});
